@@ -27,11 +27,15 @@ export default function Nav({ onBookNow }) {
   };
 
   const barStyle = {
-    backgroundColor: scrolled ? `${theme.bg}f5` : 'transparent',
+    backgroundColor: scrolled ? `${theme.bg}f5` : 'rgba(0,0,0,0.25)',
     backdropFilter: scrolled ? 'blur(12px)' : 'none',
     borderBottom: scrolled ? `1px solid ${theme.border}` : '1px solid transparent',
     transition: 'all 0.3s ease',
   };
+
+  const linkColor = scrolled ? theme.textSub : 'rgba(255,255,255,0.85)';
+  const linkHoverColor = scrolled ? theme.accent : '#ffffff';
+  const iconColor = scrolled ? theme.text : '#ffffff';
 
   return (
     <motion.nav
@@ -47,7 +51,7 @@ export default function Nav({ onBookNow }) {
           href="#top"
           onClick={(e) => handleLink(e, '#top')}
           className="font-heading font-bold text-xl tracking-widest uppercase"
-          style={{ color: theme.accent, letterSpacing: '0.12em' }}
+          style={{ color: scrolled ? theme.accent : '#ffffff', letterSpacing: '0.12em' }}
         >
           {config.name}
         </a>
@@ -60,9 +64,9 @@ export default function Nav({ onBookNow }) {
               href={l.href}
               onClick={(e) => handleLink(e, l.href)}
               className="text-sm font-medium tracking-wider uppercase transition-colors duration-200"
-              style={{ color: theme.textSub, fontFamily: theme.fontBody }}
-              onMouseEnter={(e) => (e.target.style.color = theme.accent)}
-              onMouseLeave={(e) => (e.target.style.color = theme.textSub)}
+              style={{ color: linkColor, fontFamily: theme.fontBody }}
+              onMouseEnter={(e) => (e.target.style.color = linkHoverColor)}
+              onMouseLeave={(e) => (e.target.style.color = linkColor)}
             >
               {l.label}
             </a>
@@ -89,13 +93,13 @@ export default function Nav({ onBookNow }) {
           <span
             className="block w-6 h-0.5 transition-all duration-300"
             style={{
-              backgroundColor: theme.text,
+              backgroundColor: iconColor,
               transform: open ? 'rotate(45deg) translate(4px, 4px)' : 'none',
             }}
           />
           <span
             className="block w-6 h-0.5 transition-all duration-300"
-            style={{ backgroundColor: theme.text, opacity: open ? 0 : 1 }}
+            style={{ backgroundColor: iconColor, opacity: open ? 0 : 1 }}
           />
           <span
             className="block w-6 h-0.5 transition-all duration-300"

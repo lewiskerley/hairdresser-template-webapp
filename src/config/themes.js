@@ -37,7 +37,7 @@ const hairdresserBase = {
   fontHeading: "'Playfair Display', Georgia, serif",
   fontBody:    "'Lato', 'Inter', sans-serif",
   heroImage: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1920&q=80',
-  heroOverlay: 'rgba(20,14,10,0.52)',
+  heroOverlay: 'rgba(20,14,10,0.62)',
   aboutImage: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=900&q=80',
   tagline: (loc) => `Award-Winning Hair Salon · ${loc}`,
   heroSub: (loc) => `Colour, cut, and transformation. Beautifully crafted in ${loc}.`,
