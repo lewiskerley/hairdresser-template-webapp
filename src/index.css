@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CSS variable defaults — overridden by SiteConfigContext */
+:root {
+  --color-accent:      #C9963D;
+  --color-accent-muted:#A37828;
+  --color-bg:          #0F0F0F;
+  --color-bg-card:     #1A1A1A;
+  --color-bg-section:  #141414;
+  --color-text:        #F5F5F5;
+  --color-text-sub:    #9CA3AF;
+  --color-border:      #2A2A2A;
+  --font-heading:      'Rajdhani', 'Oswald', sans-serif;
+  --font-body:         'Inter', sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Native input & select styling resets */
+input, select, textarea {
+  color-scheme: dark;
+  font-family: inherit;
+}
+
+/* Scrollbar (optional dark style) */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-bg); }
+::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-accent-muted); }
