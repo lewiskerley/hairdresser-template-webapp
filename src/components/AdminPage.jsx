@@ -6,6 +6,7 @@ const FIELDS = [
   { key: 'type',     label: 'Business Type',   type: 'select', options: ['barber', 'hairdresser'] },
   { key: 'location', label: 'Town / City',     type: 'text',   placeholder: 'e.g. Manchester' },
   { key: 'phone',    label: 'Phone Number',    type: 'text',   placeholder: 'e.g. 07700 123456' },
+  { key: 'address',  label: 'Full Address (for map)', type: 'text', placeholder: 'e.g. 12 High Street, Manchester, M1 1AB' },
   { key: 'color',    label: 'Accent Color',    type: 'select', options: ['gold', 'rose', 'blue', 'green', 'white'] },
 ];
 

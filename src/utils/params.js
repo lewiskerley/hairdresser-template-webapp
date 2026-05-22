@@ -1,5 +1,5 @@
-const SHORT_KEYS = { n: 'name', t: 'type', l: 'location', p: 'phone', c: 'color' };
-const LONG_KEYS = { name: 'n', type: 't', location: 'l', phone: 'p', color: 'c' };
+const SHORT_KEYS = { n: 'name', t: 'type', l: 'location', p: 'phone', c: 'color', a: 'address' };
+const LONG_KEYS = { name: 'n', type: 't', location: 'l', phone: 'p', color: 'c', address: 'a' };
 
 export const DEFAULTS = {
   name: 'The Fade Factory',
@@ -7,6 +7,7 @@ export const DEFAULTS = {
   location: 'London',
   phone: '020 7946 0958',
   color: 'gold',
+  address: '',   // optional — full street address for the maps embed
 };
 
 function expandKeys(obj) {

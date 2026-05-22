@@ -5,11 +5,13 @@ import AnimatedSection from './ui/AnimatedSection';
 export default function MapSection() {
   const { config, theme } = useSiteConfig();
   const [mapError, setMapError] = useState(false);
-  const encodedLocation = encodeURIComponent(`${config.name}, ${config.location}`);
-  const mapSrc = `https://maps.google.com/maps?q=${encodedLocation}&t=&z=14&ie=UTF8&iwloc=&output=embed`;
+  // Prefer a specific address if provided, fall back to "Business Name, Town"
+  const mapQuery = config.address || `${config.name}, ${config.location}`;
+  const encodedLocation = encodeURIComponent(mapQuery);
+  const mapSrc = `https://maps.google.com/maps?q=${encodedLocation}&t=&z=15&ie=UTF8&iwloc=&output=embed`;
 
   return (
-    <section className="py-24 px-5 sm:px-8" style={{ backgroundColor: theme.bg }}>
+    <section id="location" className="py-24 px-5 sm:px-8" style={{ backgroundColor: theme.bg }}>
       <div className="max-w-6xl mx-auto">
         <AnimatedSection className="text-center mb-12">
           <p

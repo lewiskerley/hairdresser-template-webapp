@@ -18,6 +18,7 @@ export function useQueryParams() {
       location: params.get('location'),
       phone:    params.get('phone'),
       color:    params.get('color'),
+      address:  params.get('address'),
     };
     const isAdmin = params.get('admin') === '1';
 
